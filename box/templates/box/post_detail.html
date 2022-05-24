@@ -1,0 +1,20 @@
+{% extends 'box/base.html' %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+  <div class="box_open" style="margin-left: 50px; border: 4px solid black; border-radius: 10px;   width: 300px; height: 300px; text-align: center; margin-top: 50px;">
+      <h1>{{ post.boxName }}</h1>
+      <p>Кількість смартфонів: {{ post.amountSm }}</p>
+      <p>Відповідальний: {{ post.vidpovid }}</p>
+      <p>Статус: {{ post.state }}</p>
+      <p>{{ post.author }}</p>
+      <form method="POST">
+      <button type="submit" class="btn btn-primary"></button>
+      </form>
+  </div>
+{% else %}
+  <p>Будь ласка авторизуйтесь або пройдіть реєстрацію!</p>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "box/base.html" %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+<!--Register-->
+<div class="container py-5" style="width: 30%; height: 40%; text-align: center; border: 3px solid black; padding: 10px; margin-left: auto; margin-right: auto; border-radius: 10px;">
+	<h1>Register</h1>
+	<form method="POST">
+		{% csrf_token %}
+		{{ register_form|crispy }}
+		<button class="btn btn-primary" type="submit">Register</button>
+	</form>
+	<p class="text-center">Уже є аккаунт? <a href="/login">Ввійти</a> зараз? </p>
+</div>
+
+{% endblock %}
